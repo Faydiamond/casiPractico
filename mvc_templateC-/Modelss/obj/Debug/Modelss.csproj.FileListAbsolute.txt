@@ -1,0 +1,23 @@
+C:\Users\Verytel S.A\source\repos\Modelss\bin\Debug\Modelss.dll.config
+C:\Users\Verytel S.A\source\repos\Modelss\bin\Debug\Modelss.dll
+C:\Users\Verytel S.A\source\repos\Modelss\bin\Debug\Modelss.pdb
+C:\Users\Verytel S.A\source\repos\Modelss\bin\Debug\EntityFramework.dll
+C:\Users\Verytel S.A\source\repos\Modelss\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Verytel S.A\source\repos\Modelss\bin\Debug\EntityFramework.xml
+C:\Users\Verytel S.A\source\repos\Modelss\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Verytel S.A\source\repos\Modelss\obj\Debug\Modelss.csproj.CoreCompileInputs.cache
+C:\Users\Verytel S.A\source\repos\Modelss\obj\Debug\Modelss.csproj.CopyComplete
+C:\Users\Verytel S.A\source\repos\Modelss\obj\Debug\Modelss.dll
+C:\Users\Verytel S.A\source\repos\Modelss\obj\Debug\Modelss.pdb
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\bin\Debug\Modelss.dll.config
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\bin\Debug\Modelss.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\bin\Debug\Modelss.pdb
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\bin\Debug\EntityFramework.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\bin\Debug\EntityFramework.xml
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\obj\Debug\Modelss.csproj.CoreCompileInputs.cache
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\obj\Debug\Modelss.csproj.CopyComplete
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\obj\Debug\Modelss.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\obj\Debug\Modelss.pdb
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\Modelss\obj\Debug\Modelss.csproj.AssemblyReference.cache

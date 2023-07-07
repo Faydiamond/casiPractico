@@ -1,0 +1,49 @@
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\pruebaaaaa.exe.config
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\pruebaaaaa.exe
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\pruebaaaaa.pdb
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\controlll.dll
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\EntityFramework.dll
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\Modelss.dll
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\controlll.pdb
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\controlll.dll.config
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\Modelss.pdb
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\Modelss.dll.config
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\EntityFramework.xml
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\obj\Debug\Views.csproj.AssemblyReference.cache
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\obj\Debug\pruebaaaaa.Main.resources
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\obj\Debug\pruebaaaaa.Properties.Resources.resources
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\obj\Debug\Views.csproj.GenerateResource.cache
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\obj\Debug\Views.csproj.CoreCompileInputs.cache
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\obj\Debug\Views.csproj.CopyComplete
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\obj\Debug\pruebaaaaa.exe
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\obj\Debug\pruebaaaaa.pdb
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\obj\Debug\pruebaaaaa.Menu.resources
+C:\Users\Verytel S.A\source\repos\pruebaaaaa\obj\Debug\pruebaaaaa.CrearProducto.resources
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\Views.csproj.AssemblyReference.cache
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\pruebaaaaa.CrearProducto.resources
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\pruebaaaaa.Main.resources
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\pruebaaaaa.Menu.resources
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\pruebaaaaa.Properties.Resources.resources
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\Views.csproj.GenerateResource.cache
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\Views.csproj.CoreCompileInputs.cache
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\pruebaaaaa.exe
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\pruebaaaaa.pdb
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\pruebaaaaa.exe.config
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\pruebaaaaa.exe
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\pruebaaaaa.pdb
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\controlll.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\EntityFramework.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\Modelss.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\controlll.pdb
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\controlll.dll.config
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\Modelss.pdb
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\Modelss.dll.config
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\EntityFramework.xml
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\Views.csproj.CopyComplete
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\pruebaaaaa.CrearOrden.resources
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\pruebaaaaa.MenuUser.resources
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\pruebaaaaa\obj\Debug\pruebaaaaa.vista_pedidoUser.resources

@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="pizeerriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adicionales">
+          <Key>
+            <PropertyRef Name="id_adicional" />
+          </Key>
+          <Property Name="id_adicional" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adicional" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="estados">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ordenes">
+          <Key>
+            <PropertyRef Name="id_orden" />
+          </Key>
+          <Property Name="id_orden" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="fk_estado" Type="int" />
+          <Property Name="fk_usuario" Type="int" />
+          <Property Name="fk_producto" Type="int" />
+          <Property Name="fk_adicional" Type="int" />
+          <Property Name="fk_tamano" Type="int" />
+          <Property Name="instrucciones" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="productos">
+          <Key>
+            <PropertyRef Name="id_producto" />
+          </Key>
+          <Property Name="id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="producto" Type="varchar" MaxLength="125" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="125" />
+          <Property Name="stock" Type="int" Nullable="false" />
+          <Property Name="precio_venta" Type="float" />
+        </EntityType>
+        <EntityType Name="roles">
+          <Key>
+            <PropertyRef Name="id_rol" />
+          </Key>
+          <Property Name="id_rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rol" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tamanos">
+          <Key>
+            <PropertyRef Name="id_tamano" />
+          </Key>
+          <Property Name="id_tamano" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tamano" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre2" Type="varchar" MaxLength="50" />
+          <Property Name="apellido1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellido2" Type="varchar" MaxLength="50" />
+          <Property Name="edad" Type="int" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" />
+          <Property Name="correo" Type="varchar" MaxLength="100" />
+          <Property Name="fk_rol" Type="int" />
+          <Property Name="clave" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <Association Name="FK__ordenes__fk_adic__4316F928">
+          <End Role="adicionales" Type="Self.adicionales" Multiplicity="0..1" />
+          <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adicionales">
+              <PropertyRef Name="id_adicional" />
+            </Principal>
+            <Dependent Role="ordenes">
+              <PropertyRef Name="fk_adicional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenes__fk_esta__440B1D61">
+          <End Role="estados" Type="Self.estados" Multiplicity="0..1" />
+          <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estados">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="ordenes">
+              <PropertyRef Name="fk_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenes__fk_prod__44FF419A">
+          <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+          <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="ordenes">
+              <PropertyRef Name="fk_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenes__fk_tama__45F365D3">
+          <End Role="tamanos" Type="Self.tamanos" Multiplicity="0..1" />
+          <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tamanos">
+              <PropertyRef Name="id_tamano" />
+            </Principal>
+            <Dependent Role="ordenes">
+              <PropertyRef Name="fk_tamano" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenes__fk_usua__46E78A0C">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="0..1" />
+          <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="ordenes">
+              <PropertyRef Name="fk_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__usuarios__fk_rol__47DBAE45">
+          <End Role="roles" Type="Self.roles" Multiplicity="0..1" />
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roles">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="usuarios">
+              <PropertyRef Name="fk_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="create_producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="producto" Type="varchar" Mode="In" />
+          <Parameter Name="descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="stock" Type="int" Mode="In" />
+          <Parameter Name="precio_venta" Type="float" Mode="In" />
+        </Function>
+        <Function Name="Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Correo" Type="varchar" Mode="In" />
+          <Parameter Name="Clave" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="pizeerriaModelStoreContainer">
+          <EntitySet Name="adicionales" EntityType="Self.adicionales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estados" EntityType="Self.estados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ordenes" EntityType="Self.ordenes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tamanos" EntityType="Self.tamanos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ordenes__fk_adic__4316F928" Association="Self.FK__ordenes__fk_adic__4316F928">
+            <End Role="adicionales" EntitySet="adicionales" />
+            <End Role="ordenes" EntitySet="ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenes__fk_esta__440B1D61" Association="Self.FK__ordenes__fk_esta__440B1D61">
+            <End Role="estados" EntitySet="estados" />
+            <End Role="ordenes" EntitySet="ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenes__fk_prod__44FF419A" Association="Self.FK__ordenes__fk_prod__44FF419A">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="ordenes" EntitySet="ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenes__fk_tama__45F365D3" Association="Self.FK__ordenes__fk_tama__45F365D3">
+            <End Role="tamanos" EntitySet="tamanos" />
+            <End Role="ordenes" EntitySet="ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenes__fk_usua__46E78A0C" Association="Self.FK__ordenes__fk_usua__46E78A0C">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="ordenes" EntitySet="ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__usuarios__fk_rol__47DBAE45" Association="Self.FK__usuarios__fk_rol__47DBAE45">
+            <End Role="roles" EntitySet="roles" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pizeerriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="adicionales">
+          <Key>
+            <PropertyRef Name="id_adicional" />
+          </Key>
+          <Property Name="id_adicional" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adicional" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ordenes" Relationship="Self.FK__ordenes__fk_adic__4316F928" FromRole="adicionales" ToRole="ordenes" />
+        </EntityType>
+        <EntityType Name="estados">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ordenes" Relationship="Self.FK__ordenes__fk_esta__440B1D61" FromRole="estados" ToRole="ordenes" />
+        </EntityType>
+        <EntityType Name="ordenes">
+          <Key>
+            <PropertyRef Name="id_orden" />
+          </Key>
+          <Property Name="id_orden" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="fk_estado" Type="Int32" />
+          <Property Name="fk_usuario" Type="Int32" />
+          <Property Name="fk_producto" Type="Int32" />
+          <Property Name="fk_adicional" Type="Int32" />
+          <Property Name="fk_tamano" Type="Int32" />
+          <Property Name="instrucciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="adicionales" Relationship="Self.FK__ordenes__fk_adic__4316F928" FromRole="ordenes" ToRole="adicionales" />
+          <NavigationProperty Name="estados" Relationship="Self.FK__ordenes__fk_esta__440B1D61" FromRole="ordenes" ToRole="estados" />
+          <NavigationProperty Name="productos" Relationship="Self.FK__ordenes__fk_prod__44FF419A" FromRole="ordenes" ToRole="productos" />
+          <NavigationProperty Name="tamanos" Relationship="Self.FK__ordenes__fk_tama__45F365D3" FromRole="ordenes" ToRole="tamanos" />
+          <NavigationProperty Name="usuarios" Relationship="Self.FK__ordenes__fk_usua__46E78A0C" FromRole="ordenes" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="productos">
+          <Key>
+            <PropertyRef Name="id_producto" />
+          </Key>
+          <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="producto" Type="String" MaxLength="125" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="stock" Type="Int32" Nullable="false" />
+          <Property Name="precio_venta" Type="Double" />
+          <NavigationProperty Name="ordenes" Relationship="Self.FK__ordenes__fk_prod__44FF419A" FromRole="productos" ToRole="ordenes" />
+        </EntityType>
+        <EntityType Name="roles">
+          <Key>
+            <PropertyRef Name="id_rol" />
+          </Key>
+          <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rol" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuarios" Relationship="Self.FK__usuarios__fk_rol__47DBAE45" FromRole="roles" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="tamanos">
+          <Key>
+            <PropertyRef Name="id_tamano" />
+          </Key>
+          <Property Name="id_tamano" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tamano" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ordenes" Relationship="Self.FK__ordenes__fk_tama__45F365D3" FromRole="tamanos" ToRole="ordenes" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="edad" Type="Int32" />
+          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="fk_rol" Type="Int32" />
+          <Property Name="clave" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ordenes" Relationship="Self.FK__ordenes__fk_usua__46E78A0C" FromRole="usuarios" ToRole="ordenes" />
+          <NavigationProperty Name="roles" Relationship="Self.FK__usuarios__fk_rol__47DBAE45" FromRole="usuarios" ToRole="roles" />
+        </EntityType>
+        <Association Name="FK__ordenes__fk_adic__4316F928">
+          <End Role="adicionales" Type="Self.adicionales" Multiplicity="0..1" />
+          <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adicionales">
+              <PropertyRef Name="id_adicional" />
+            </Principal>
+            <Dependent Role="ordenes">
+              <PropertyRef Name="fk_adicional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenes__fk_esta__440B1D61">
+          <End Role="estados" Type="Self.estados" Multiplicity="0..1" />
+          <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estados">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="ordenes">
+              <PropertyRef Name="fk_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenes__fk_prod__44FF419A">
+          <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+          <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="ordenes">
+              <PropertyRef Name="fk_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenes__fk_tama__45F365D3">
+          <End Role="tamanos" Type="Self.tamanos" Multiplicity="0..1" />
+          <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tamanos">
+              <PropertyRef Name="id_tamano" />
+            </Principal>
+            <Dependent Role="ordenes">
+              <PropertyRef Name="fk_tamano" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenes__fk_usua__46E78A0C">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="0..1" />
+          <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="ordenes">
+              <PropertyRef Name="fk_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__usuarios__fk_rol__47DBAE45">
+          <End Role="roles" Type="Self.roles" Multiplicity="0..1" />
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roles">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="usuarios">
+              <PropertyRef Name="fk_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="pizeerriaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="adicionales" EntityType="Self.adicionales" />
+          <EntitySet Name="estados" EntityType="Self.estados" />
+          <EntitySet Name="ordenes" EntityType="Self.ordenes" />
+          <EntitySet Name="productos" EntityType="Self.productos" />
+          <EntitySet Name="roles" EntityType="Self.roles" />
+          <EntitySet Name="tamanos" EntityType="Self.tamanos" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" />
+          <AssociationSet Name="FK__ordenes__fk_adic__4316F928" Association="Self.FK__ordenes__fk_adic__4316F928">
+            <End Role="adicionales" EntitySet="adicionales" />
+            <End Role="ordenes" EntitySet="ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenes__fk_esta__440B1D61" Association="Self.FK__ordenes__fk_esta__440B1D61">
+            <End Role="estados" EntitySet="estados" />
+            <End Role="ordenes" EntitySet="ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenes__fk_prod__44FF419A" Association="Self.FK__ordenes__fk_prod__44FF419A">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="ordenes" EntitySet="ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenes__fk_tama__45F365D3" Association="Self.FK__ordenes__fk_tama__45F365D3">
+            <End Role="tamanos" EntitySet="tamanos" />
+            <End Role="ordenes" EntitySet="ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenes__fk_usua__46E78A0C" Association="Self.FK__ordenes__fk_usua__46E78A0C">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="ordenes" EntitySet="ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__usuarios__fk_rol__47DBAE45" Association="Self.FK__usuarios__fk_rol__47DBAE45">
+            <End Role="roles" EntitySet="roles" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+          <FunctionImport Name="create_producto">
+            <Parameter Name="producto" Mode="In" Type="String" />
+            <Parameter Name="descripcion" Mode="In" Type="String" />
+            <Parameter Name="stock" Mode="In" Type="Int32" />
+            <Parameter Name="precio_venta" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="Login" ReturnType="Collection(pizeerriaModel.Login_Result)">
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="Clave" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Login_Result">
+          <Property Type="Int32" Name="id_usuario" Nullable="false" />
+          <Property Type="String" Name="nombre1" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nombre2" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="fk_rol" Nullable="true" />
+          <Property Type="String" Name="apellido1" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="correo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="clave" Nullable="true" MaxLength="45" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pizeerriaModelStoreContainer" CdmEntityContainer="pizeerriaEntities">
+          <EntitySetMapping Name="adicionales">
+            <EntityTypeMapping TypeName="pizeerriaModel.adicionales">
+              <MappingFragment StoreEntitySet="adicionales">
+                <ScalarProperty Name="id_adicional" ColumnName="id_adicional" />
+                <ScalarProperty Name="adicional" ColumnName="adicional" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estados">
+            <EntityTypeMapping TypeName="pizeerriaModel.estados">
+              <MappingFragment StoreEntitySet="estados">
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ordenes">
+            <EntityTypeMapping TypeName="pizeerriaModel.ordenes">
+              <MappingFragment StoreEntitySet="ordenes">
+                <ScalarProperty Name="id_orden" ColumnName="id_orden" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="fk_estado" ColumnName="fk_estado" />
+                <ScalarProperty Name="fk_usuario" ColumnName="fk_usuario" />
+                <ScalarProperty Name="fk_producto" ColumnName="fk_producto" />
+                <ScalarProperty Name="fk_adicional" ColumnName="fk_adicional" />
+                <ScalarProperty Name="fk_tamano" ColumnName="fk_tamano" />
+                <ScalarProperty Name="instrucciones" ColumnName="instrucciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="productos">
+            <EntityTypeMapping TypeName="pizeerriaModel.productos">
+              <MappingFragment StoreEntitySet="productos">
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="producto" ColumnName="producto" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="stock" ColumnName="stock" />
+                <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roles">
+            <EntityTypeMapping TypeName="pizeerriaModel.roles">
+              <MappingFragment StoreEntitySet="roles">
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tamanos">
+            <EntityTypeMapping TypeName="pizeerriaModel.tamanos">
+              <MappingFragment StoreEntitySet="tamanos">
+                <ScalarProperty Name="id_tamano" ColumnName="id_tamano" />
+                <ScalarProperty Name="tamano" ColumnName="tamano" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="pizeerriaModel.usuarios">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="nombre1" ColumnName="nombre1" />
+                <ScalarProperty Name="nombre2" ColumnName="nombre2" />
+                <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+                <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="fk_rol" ColumnName="fk_rol" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="create_producto" FunctionName="pizeerriaModel.Store.create_producto" />
+          <FunctionImportMapping FunctionImportName="Login" FunctionName="pizeerriaModel.Store.Login">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="pizeerriaModel.Login_Result">
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="nombre1" ColumnName="nombre1" />
+                <ScalarProperty Name="nombre2" ColumnName="nombre2" />
+                <ScalarProperty Name="fk_rol" ColumnName="fk_rol" />
+                <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

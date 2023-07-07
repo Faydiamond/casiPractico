@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pizzeriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="detalle_ordenes">
+    <Key>
+      <PropertyRef Name="id_det_orden" />
+    </Key>
+    <Property Name="id_det_orden" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="producto" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad_pedida" Type="Int32" />
+    <Property Name="valor_unitario" Type="Double" />
+    <Property Name="fk_producto" Type="Int32" />
+    <Property Name="fk_orden" Type="Int32" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ordenes" Relationship="Self.FK__detalle_o__fk_or__6D0D32F4" FromRole="detalle_ordenes" ToRole="ordenes" />
+    <NavigationProperty Name="productos" Relationship="Self.FK__detalle_o__fk_pr__6C190EBB" FromRole="detalle_ordenes" ToRole="productos" />
+  </EntityType>
+  <EntityType Name="estados">
+    <Key>
+      <PropertyRef Name="id_estado" />
+    </Key>
+    <Property Name="id_estado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="String" MaxLength="125" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ordenes" Relationship="Self.FK__ordenes__fk_esta__6477ECF3" FromRole="estados" ToRole="ordenes" />
+  </EntityType>
+  <EntityType Name="ordenes">
+    <Key>
+      <PropertyRef Name="id_orden" />
+    </Key>
+    <Property Name="id_orden" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="fk_estado" Type="Int32" />
+    <Property Name="fk_usuario" Type="Int32" />
+    <Property Name="ultima_actualizacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="detalle_ordenes" Relationship="Self.FK__detalle_o__fk_or__6D0D32F4" FromRole="ordenes" ToRole="detalle_ordenes" />
+    <NavigationProperty Name="estados" Relationship="Self.FK__ordenes__fk_esta__6477ECF3" FromRole="ordenes" ToRole="estados" />
+    <NavigationProperty Name="usuarios" Relationship="Self.FK__ordenes__fk_usua__656C112C" FromRole="ordenes" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="personas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="edad" Type="Int32" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="id_producto" />
+    </Key>
+    <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="producto" Type="String" MaxLength="125" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+    <Property Name="stock" Type="Int32" Nullable="false" />
+    <Property Name="precio_venta" Type="Double" />
+    <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="detalle_ordenes" Relationship="Self.FK__detalle_o__fk_pr__6C190EBB" FromRole="productos" ToRole="detalle_ordenes" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="id_rol" />
+    </Key>
+    <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rol" Type="String" MaxLength="125" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="usuarios" Relationship="Self.FK__usuarios__fk_rol__5535A963" FromRole="roles" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellido1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="edad" Type="Int32" />
+    <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fk_rol" Type="Int32" />
+    <Property Name="clave" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ordenes" Relationship="Self.FK__ordenes__fk_usua__656C112C" FromRole="usuarios" ToRole="ordenes" />
+    <NavigationProperty Name="roles" Relationship="Self.FK__usuarios__fk_rol__5535A963" FromRole="usuarios" ToRole="roles" />
+  </EntityType>
+  <Association Name="FK__detalle_o__fk_or__6D0D32F4">
+    <End Role="ordenes" Type="Self.ordenes" Multiplicity="0..1" />
+    <End Role="detalle_ordenes" Type="Self.detalle_ordenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ordenes">
+        <PropertyRef Name="id_orden" />
+      </Principal>
+      <Dependent Role="detalle_ordenes">
+        <PropertyRef Name="fk_orden" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__detalle_o__fk_pr__6C190EBB">
+    <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+    <End Role="detalle_ordenes" Type="Self.detalle_ordenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="detalle_ordenes">
+        <PropertyRef Name="fk_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ordenes__fk_esta__6477ECF3">
+    <End Role="estados" Type="Self.estados" Multiplicity="0..1" />
+    <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estados">
+        <PropertyRef Name="id_estado" />
+      </Principal>
+      <Dependent Role="ordenes">
+        <PropertyRef Name="fk_estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ordenes__fk_usua__656C112C">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="0..1" />
+    <End Role="ordenes" Type="Self.ordenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="ordenes">
+        <PropertyRef Name="fk_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__usuarios__fk_rol__5535A963">
+    <End Role="roles" Type="Self.roles" Multiplicity="0..1" />
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roles">
+        <PropertyRef Name="id_rol" />
+      </Principal>
+      <Dependent Role="usuarios">
+        <PropertyRef Name="fk_rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="pizzeriaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="detalle_ordenes" EntityType="Self.detalle_ordenes" />
+    <EntitySet Name="estados" EntityType="Self.estados" />
+    <EntitySet Name="ordenes" EntityType="Self.ordenes" />
+    <EntitySet Name="personas" EntityType="Self.personas" />
+    <EntitySet Name="productos" EntityType="Self.productos" />
+    <EntitySet Name="roles" EntityType="Self.roles" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" />
+    <AssociationSet Name="FK__detalle_o__fk_or__6D0D32F4" Association="Self.FK__detalle_o__fk_or__6D0D32F4">
+      <End Role="ordenes" EntitySet="ordenes" />
+      <End Role="detalle_ordenes" EntitySet="detalle_ordenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__detalle_o__fk_pr__6C190EBB" Association="Self.FK__detalle_o__fk_pr__6C190EBB">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="detalle_ordenes" EntitySet="detalle_ordenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ordenes__fk_esta__6477ECF3" Association="Self.FK__ordenes__fk_esta__6477ECF3">
+      <End Role="estados" EntitySet="estados" />
+      <End Role="ordenes" EntitySet="ordenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ordenes__fk_usua__656C112C" Association="Self.FK__ordenes__fk_usua__656C112C">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="ordenes" EntitySet="ordenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__usuarios__fk_rol__5535A963" Association="Self.FK__usuarios__fk_rol__5535A963">
+      <End Role="roles" EntitySet="roles" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <FunctionImport Name="create_producto">
+      <Parameter Name="producto" Mode="In" Type="String" />
+      <Parameter Name="descripcion" Mode="In" Type="String" />
+      <Parameter Name="stock" Mode="In" Type="Int32" />
+      <Parameter Name="precio_venta" Mode="In" Type="Double" />
+      <Parameter Name="imagen" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="Login" ReturnType="Collection(pizzeriaModel.Login_Result)">
+      <Parameter Name="Correo" Mode="In" Type="String" />
+      <Parameter Name="Clave" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sel_personas" ReturnType="Collection(pizzeriaModel.sel_personas_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(pizzeriaModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(pizzeriaModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="Login_Result">
+    <Property Type="Int32" Name="id_usuario" Nullable="false" />
+    <Property Type="String" Name="nombre1" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="nombre2" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sel_personas_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombres" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="apellidos" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="edad" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

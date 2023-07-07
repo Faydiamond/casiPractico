@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="pizeerriaModelStoreContainer" CdmEntityContainer="pizeerriaEntities">
+    <EntitySetMapping Name="adicionales">
+      <EntityTypeMapping TypeName="pizeerriaModel.adicionales">
+        <MappingFragment StoreEntitySet="adicionales">
+          <ScalarProperty Name="id_adicional" ColumnName="id_adicional" />
+          <ScalarProperty Name="adicional" ColumnName="adicional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estados">
+      <EntityTypeMapping TypeName="pizeerriaModel.estados">
+        <MappingFragment StoreEntitySet="estados">
+          <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ordenes">
+      <EntityTypeMapping TypeName="pizeerriaModel.ordenes">
+        <MappingFragment StoreEntitySet="ordenes">
+          <ScalarProperty Name="id_orden" ColumnName="id_orden" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="fk_estado" ColumnName="fk_estado" />
+          <ScalarProperty Name="fk_usuario" ColumnName="fk_usuario" />
+          <ScalarProperty Name="fk_producto" ColumnName="fk_producto" />
+          <ScalarProperty Name="fk_adicional" ColumnName="fk_adicional" />
+          <ScalarProperty Name="fk_tamano" ColumnName="fk_tamano" />
+          <ScalarProperty Name="instrucciones" ColumnName="instrucciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productos">
+      <EntityTypeMapping TypeName="pizeerriaModel.productos">
+        <MappingFragment StoreEntitySet="productos">
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="producto" ColumnName="producto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="pizeerriaModel.roles">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tamanos">
+      <EntityTypeMapping TypeName="pizeerriaModel.tamanos">
+        <MappingFragment StoreEntitySet="tamanos">
+          <ScalarProperty Name="id_tamano" ColumnName="id_tamano" />
+          <ScalarProperty Name="tamano" ColumnName="tamano" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="pizeerriaModel.usuarios">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nombre1" ColumnName="nombre1" />
+          <ScalarProperty Name="nombre2" ColumnName="nombre2" />
+          <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+          <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="fk_rol" ColumnName="fk_rol" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="create_producto" FunctionName="pizeerriaModel.Store.create_producto" />
+    <FunctionImportMapping FunctionImportName="Login" FunctionName="pizeerriaModel.Store.Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="pizeerriaModel.Login_Result">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nombre1" ColumnName="nombre1" />
+          <ScalarProperty Name="nombre2" ColumnName="nombre2" />
+          <ScalarProperty Name="fk_rol" ColumnName="fk_rol" />
+          <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

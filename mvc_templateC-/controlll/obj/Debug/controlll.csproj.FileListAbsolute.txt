@@ -1,0 +1,30 @@
+C:\Users\Verytel S.A\source\repos\controlll\bin\Debug\controlll.dll.config
+C:\Users\Verytel S.A\source\repos\controlll\bin\Debug\controlll.dll
+C:\Users\Verytel S.A\source\repos\controlll\bin\Debug\controlll.pdb
+C:\Users\Verytel S.A\source\repos\controlll\bin\Debug\EntityFramework.dll
+C:\Users\Verytel S.A\source\repos\controlll\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Verytel S.A\source\repos\controlll\bin\Debug\Modelss.dll
+C:\Users\Verytel S.A\source\repos\controlll\bin\Debug\Modelss.pdb
+C:\Users\Verytel S.A\source\repos\controlll\bin\Debug\Modelss.dll.config
+C:\Users\Verytel S.A\source\repos\controlll\bin\Debug\EntityFramework.xml
+C:\Users\Verytel S.A\source\repos\controlll\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Verytel S.A\source\repos\controlll\obj\Debug\controlll.csproj.AssemblyReference.cache
+C:\Users\Verytel S.A\source\repos\controlll\obj\Debug\controlll.csproj.CoreCompileInputs.cache
+C:\Users\Verytel S.A\source\repos\controlll\obj\Debug\controlll.csproj.CopyComplete
+C:\Users\Verytel S.A\source\repos\controlll\obj\Debug\controlll.dll
+C:\Users\Verytel S.A\source\repos\controlll\obj\Debug\controlll.pdb
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\bin\Debug\controlll.dll.config
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\bin\Debug\controlll.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\bin\Debug\controlll.pdb
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\bin\Debug\EntityFramework.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\bin\Debug\Modelss.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\bin\Debug\Modelss.pdb
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\bin\Debug\Modelss.dll.config
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\bin\Debug\EntityFramework.xml
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\obj\Debug\controlll.csproj.AssemblyReference.cache
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\obj\Debug\controlll.csproj.CoreCompileInputs.cache
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\obj\Debug\controlll.csproj.CopyComplete
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\obj\Debug\controlll.dll
+C:\Users\Fabian\Documents\fabian\2023\Verytel\CasoPractico\mvc_templateC-\controlll\obj\Debug\controlll.pdb
